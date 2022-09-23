@@ -1,8 +1,9 @@
-import 'package:flame/experimental.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'logo.dart';
 
 class TronGame extends FlameGame with KeyboardEvents{
 
@@ -17,9 +18,21 @@ class TronGame extends FlameGame with KeyboardEvents{
   static const double _speed = 100.0;
   static const double _friction = 0.9;
 
-  Vector2 _position = Vector2.zero();
+  Vector2 _position = Vector2(300, 300);
   Vector2 _movementVector = Vector2.zero();
 
+  late final Logo _logo;
+
+  @override
+  Future<void> onLoad() async {
+    await super.onLoad();
+    _logo = Logo();
+    _logo.debugMode = true;
+    _logo.priority = 9;
+    _logo.x = 200;
+    _logo.y = 100;
+    await add(_logo);
+  }
 
   @override
   void update(double dt) {
