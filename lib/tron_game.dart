@@ -1,3 +1,4 @@
+import 'package:flame/components.dart';
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,7 @@ class TronGame extends FlameGame with KeyboardEvents{
     _logo.x = 200;
     _logo.y = 100;
     await add(_logo);
+    await add(FpsTextComponent());
   }
 
   @override
