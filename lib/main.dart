@@ -11,7 +11,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     //DESKTOP
-    await DesktopWindow.toggleFullScreen();
+    //await DesktopWindow.toggleFullScreen();
   }else if(kIsWeb){
     //WEB
   }else{

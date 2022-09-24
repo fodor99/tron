@@ -19,11 +19,7 @@ class TronGame extends FlameGame with HasTappableComponents, HasKeyboardHandlerC
   Future<void> onLoad() async{
 
     debugMode = true;
-    //double maxSide = min(size.x, size.y);
-    //camera.viewport = FixedResolutionViewport(Vector2(1000, 2400));
     camera.viewport = FixedResolutionViewport(Vector2(size.x, size.y));
-    //camera.viewport = FixedResolutionViewport(Vector2.all(maxSide)); //general big screen phone rough resolutions
-
 
     addAll([
       router = RouterComponent(
