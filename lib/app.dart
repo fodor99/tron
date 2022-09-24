@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: GameWidget.controlled(gameFactory: TronGame.new),
+        body: GameWidget.controlled(gameFactory: TronGame.new, autofocus: true),
       ),
     );
   }
