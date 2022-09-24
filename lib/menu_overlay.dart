@@ -16,7 +16,7 @@ class MenuOverlay extends StatelessWidget {
         }, child: const Text('Pause')),
         ElevatedButton(onPressed: (){
           gameRef.paused = false;
-          gameRef.camera.shake(intensity: 10);
+          gameRef.camera.shake(intensity: 5);
         }, child: const Text('Un-Pause'))
       ],),
     );
