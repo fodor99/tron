@@ -1,25 +1,25 @@
-import 'dart:math';
-
 import 'package:flame/components.dart';
-import 'package:flame/events.dart';
-import 'package:flame/experimental.dart';
+import 'package:flame/effects.dart';
 import 'package:flame/game.dart';
-import 'package:flame/palette.dart';
-import 'package:tron/logo.dart';
 
+import 'logo.dart';
 
-import 'game_colors.dart';
-
-class TronGame extends FlameGame with HasTappableComponents, HasKeyboardHandlerComponents{
-
-  @override
-  Color backgroundColor() => GameColors.backgroundColor;
+class TronGame extends FlameGame{
 
   @override
   Future<void> onLoad() async{
     debugMode = true;
     add(FpsTextComponent());
     camera.viewport = FixedResolutionViewport(Vector2(size.x, size.y));
-    add(Logo());
+    var _logo = Logo();
+    var _rotate = RotateEffect.to(
+        Transform2D.tau,
+      EffectController(
+        duration: 2,
+        infinite: true,
+      )
+    );
+    _logo.add(_rotate);
+    add(_logo);
   }
 }
