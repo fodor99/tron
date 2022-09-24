@@ -33,6 +33,7 @@ class TronGame extends FlameGame
     add(joystick);
 
     final logo = Logo(joystick);
+    logo.flipHorizontally();
     add(logo);
 
   }
