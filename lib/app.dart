@@ -26,15 +26,17 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: GameWidget(
-            game: _game,
-            initialActiveOverlays: const [MenuOverlay.id],
-            overlayBuilderMap: {
-              MenuOverlay.id: (BuildContext context, TronGame gameRef) =>
-                  MenuOverlay(
-                    gameRef: gameRef
-                  )
-            },
+        body: SafeArea(
+          child: GameWidget(
+              game: _game,
+              initialActiveOverlays: const [MenuOverlay.id],
+              overlayBuilderMap: {
+                MenuOverlay.id: (BuildContext context, TronGame gameRef) =>
+                    MenuOverlay(
+                      gameRef: gameRef
+                    )
+              },
+          ),
         ),
       ),
     );
